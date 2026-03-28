@@ -26,15 +26,15 @@ Watches your Polymarket positions and sends Telegram alerts when prices move sig
    POLYMARKET_USER=0xYourWalletAddress
    TELEGRAM_TOKEN=your_bot_token
    TELEGRAM_CHAT_ID=your_chat_id
-   POLL_INTERVAL_MS=30000
-   ALERT_THRESHOLD=0.01
+   POLL_INTERVAL_MS=60000
+   ALERT_THRESHOLD=0.05
    ```
 
    - `POLYMARKET_USER`: Your Ethereum wallet address connected to Polymarket
    - `TELEGRAM_TOKEN`: Create a bot via [@BotFather](https://t.me/botfather)
    - `TELEGRAM_CHAT_ID`: Get your chat ID via [@userinfobot](https://t.me/userinfobot)
-   - `POLL_INTERVAL_MS`: How often to check prices (default: 30000ms = 30s)
-   - `ALERT_THRESHOLD`: Price change threshold to trigger alerts (default: 0.01 = 1%)
+   - `POLL_INTERVAL_MS`: How often to check prices (default: 60000ms = 60s)
+   - `ALERT_THRESHOLD`: Absolute price change to trigger alerts (default: 0.05 = 5¢)
 
 ## Usage
 

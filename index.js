@@ -5,8 +5,8 @@ const path = require("path");
 const POLYMARKET_USER = process.env.POLYMARKET_USER;
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-const POLL_INTERVAL_MS = parseInt(process.env.POLL_INTERVAL_MS || "30000", 10);
-const ALERT_THRESHOLD = parseFloat(process.env.ALERT_THRESHOLD || "0.01");
+const POLL_INTERVAL_MS = parseInt(process.env.POLL_INTERVAL_MS || "60000", 10);
+const ALERT_THRESHOLD = parseFloat(process.env.ALERT_THRESHOLD || "0.05");
 const DATA_FILE = path.join(__dirname, "prices.json");
 
 let lastPrices = {}; // { [asset]: price }
@@ -58,8 +58,10 @@ async function checkPositions() {
 
     if (prev !== undefined) {
       const change = (curPrice - prev) / prev;
+      const delta = (curPrice - prev);
+      // console.log(`change: ${change}, delta: ${delta}`)
 
-      if (Math.abs(change) >= ALERT_THRESHOLD) {
+      if (Math.abs(delta) >= ALERT_THRESHOLD) {
         const dir = change > 0 ? "🟢 UP" : "🔴 DOWN";
         const pct = (change * 100).toFixed(1);
         const msg =
@@ -99,3 +101,4 @@ process.on("SIGTERM", () => {
   savePrices();
   process.exit(0);
 });
+
