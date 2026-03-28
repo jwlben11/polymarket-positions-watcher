@@ -61,8 +61,6 @@ Press `Ctrl+C` to stop gracefully.
 ## Data Files
 
 - `prices.json` - Persists last known prices between runs
-- `.env` - Configuration (not committed to git)
+- `.env` - Configuration
 
-## License
-
-MIT
+This is a simple script. If you run into any issues, raise it in the issues tab and I'll fix it. 
