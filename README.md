@@ -44,6 +44,12 @@ Run the watcher:
 node index.js
 ```
 
+I would suggest using pm2 to keep it running in the background
+
+```bash
+pm2 start index.js --name polymarket-position-watcher
+```
+
 The script will:
 - Load previously saved prices (if any)
 - Check your positions immediately
