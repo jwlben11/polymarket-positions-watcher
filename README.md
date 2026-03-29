@@ -1,11 +1,11 @@
 # Polymarket Positions Watcher
 
-Watches your Polymarket positions and sends Telegram alerts when prices move significantly.
+Watches your Polymarket positions and sends Telegram alerts when prices move significantly in a short period of time. 
 
 ## Features
 
 - Monitors your Polymarket positions in real-time
-- Sends Telegram notifications when prices move by a configurable threshold
+- Sends Telegram notifications when prices move by a configurable threshold 
 - Persists price history across restarts
 - Runs continuously with configurable polling interval
 
